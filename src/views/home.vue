@@ -12,16 +12,22 @@ import JsApiNotification from "../components/JsApiNotification.vue";
 import JsApiOs from "../components/JsApiOs.vue";
 import JsApiWindow from "../components/JsApiWindow.vue";
 import JsApiGlobalShortcut from "../components/JsApiGlobalShortcut.vue";
-import Test from '../components/Test/index.vue'
-const activeName = ref('test')
-
-
+import Test from "../components/Test/index.vue";
+import MyVxeTable from "../components/myVxeTable.vue";
+import MyVueUse from "../components/myVueUse.vue";
+const activeName = ref("test");
 </script>
 
 <template>
   <el-tabs type="border-card" v-model="activeName" class="js-api-tabs">
+    <el-tab-pane label="MyVxeTable" name="myVxeTable">
+      <MyVxeTable />
+    </el-tab-pane>
     <el-tab-pane label="Test" name="test">
       <Test />
+    </el-tab-pane>
+    <el-tab-pane label="MyVueUse" name="myVueUse">
+      <MyVueUse />
     </el-tab-pane>
     <el-tab-pane label="App" name="app">
       <JsApiApp />
@@ -33,19 +39,19 @@ const activeName = ref('test')
       <JsApiDialog />
     </el-tab-pane>
     <el-tab-pane label="Path" name="path">
-      <JsApiPath/>
+      <JsApiPath />
     </el-tab-pane>
     <el-tab-pane label="FS" name="fs">
-      <JsApiFs/>
+      <JsApiFs />
     </el-tab-pane>
     <el-tab-pane label="Http" name="http">
-      <JsApiHttp/>
+      <JsApiHttp />
     </el-tab-pane>
     <el-tab-pane label="Notification" name="notification">
-      <JsApiNotification/>
+      <JsApiNotification />
     </el-tab-pane>
     <el-tab-pane label="GlobalShortcut" name="globalshortcut">
-      <JsApiGlobalShortcut/>
+      <JsApiGlobalShortcut />
     </el-tab-pane>
     <el-tab-pane label="OS" name="os">
       <JsApiOs />
@@ -54,9 +60,6 @@ const activeName = ref('test')
       <JsApiWindow />
     </el-tab-pane>
   </el-tabs>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -18,7 +18,7 @@
         "open": true
       },
       "fs": {
-        "scope": ["$DOWNLOAD","$DOWNLOAD/*"]
+        "scope": ["$DOWNLOAD", "$DOWNLOAD/*"]
       },
       "http": {
         "scope": ["https://tauri.app/*", "https://api.bilibili.com/*"]
@@ -59,7 +59,7 @@
           "language": ["zh-CN"]
         },
         "webviewInstallMode": {
-          "type": "embedBootstrapper"
+          "type": "downloadBootstrapper"
         }
       }
     },
@@ -76,8 +76,22 @@
         "resizable": true,
         "title": "tauri Api 实例",
         "width": 800,
-        "label": "main"
+        "label": "main",
+        "visible": true
+      },
+      {
+        "width": 400,
+        "height": 200,
+        "decorations": false,
+        "center": true,
+        "url": "/#/login",
+        "label": "login",
+        "visible": false
       }
-    ]
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    }
   }
 }

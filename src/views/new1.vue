@@ -19,6 +19,14 @@ function globalEmit() {
   });
 }
 
+async function close() {
+  await appWindow.close();
+}
+
+async function windowSet(width, height) {
+  await appWindow.setSize(new LogicalSize(width, height));
+}
+
 // listen("new1-msg", (e) => {
 //   console.log("listen:new1-msg: ", e);
 // }).then((res) => {
@@ -31,10 +39,15 @@ function globalEmit() {
     <div
       data-tauri-drag-region
       style="height: 50px; width: 50px; background: red"
+      class="text-gray-400"
     >
       按我拖拽
     </div>
-    新窗口
+
+    <el-button @click="close">关闭</el-button>
+
+    <el-button @click="windowSet(300, 300)">设置为300*300</el-button>
+
     <el-button @click="rustMsg">rust msg</el-button>
     <p>
       <el-button @click="globalEmit">发送消息</el-button>
