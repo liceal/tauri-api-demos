@@ -8,7 +8,7 @@ import router from "./router";
 import VXETable from "vxe-table";
 import "vxe-table/lib/style.css";
 
-function useTable(app) {
+function useTable(app:any) {
   app.use(VXETable);
 }
 

@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const routes = [
+const routes:any = [
   {
     path: "/login",
     name: "Login",
