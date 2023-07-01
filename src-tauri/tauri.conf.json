@@ -77,16 +77,16 @@
         "title": "tauri Api 实例",
         "width": 800,
         "label": "main",
-        "visible": true
+        "visible": false
       },
       {
         "width": 400,
         "height": 200,
-        "decorations": false,
+        "decorations": true,
         "center": true,
         "url": "/#/login",
         "label": "login",
-        "visible": false
+        "visible": true
       }
     ],
     "systemTray": {
