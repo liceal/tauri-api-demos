@@ -15,14 +15,14 @@ import JsApiGlobalShortcut from "../components/JsApiGlobalShortcut.vue";
 import Test from "../components/Test/index.vue";
 import MyVxeTable from "../components/myVxeTable.vue";
 import MyVueUse from "../components/myVueUse.vue";
-import Demo from './demo'
-const activeName = ref("tsxView");
+import Demo from "./demo";
+const activeName = ref("Demo");
 </script>
 
 <template>
   <el-tabs type="border-card" v-model="activeName" class="js-api-tabs">
-    <el-tab-pane label="tsxView" name="tsxView">
-      <Demo/>
+    <el-tab-pane label="Demo" name="Demo">
+      <Demo />
     </el-tab-pane>
     <el-tab-pane label="MyVxeTable" name="myVxeTable">
       <MyVxeTable />
