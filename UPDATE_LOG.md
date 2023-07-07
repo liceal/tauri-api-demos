@@ -1,5 +1,10 @@
 # Updater Log
 
+## v0.0.28
+
+- workflow test
+- 使用 github 配置
+
 ## v0.0.27
 
 - workflow test
