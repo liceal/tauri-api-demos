@@ -13,10 +13,11 @@ jobs:
       RELEASE_UPLOAD_ID: ${{ steps.create_release.outputs.id }}
 
     steps:
-      - run: echo "${{ secrets }}" | jq .
-      - run: echo ${{ secrets.MY_GITHUB_TOKEN }}
-      - run: echo ${{ secrets.GITHUB_TOKEN }}
-      - run: echo ${{ secrets.TAURI_KEY_PASSWORD }}
+      - name: Print all secrets
+        run: |
+          for secret in $(env | grep -o "^SECRET_.*"); do
+            echo "${secret}=${!secret}"
+          done
 
       - uses: actions/checkout@v2
       - name: Query version number
