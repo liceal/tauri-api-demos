@@ -13,6 +13,11 @@ jobs:
       RELEASE_UPLOAD_ID: ${{ steps.create_release.outputs.id }}
 
     steps:
+      - run: echo ${{ secrets.GITHUBTOKEN }}
+      - run: echo ${{ secrets.MY_GITHUB_TOKEN }}
+      - run: echo ${{ secrets.GITHUB_TOKEN }}
+      - run: echo ${{ secrets.TAURI_KEY_PASSWORD }}
+      
       - uses: actions/checkout@v2
       - name: Query version number
         id: get_version
