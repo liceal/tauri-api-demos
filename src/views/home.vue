@@ -12,7 +12,7 @@ import JsApiNotification from "../components/JsApiNotification.vue";
 import JsApiOs from "../components/JsApiOs.vue";
 import JsApiWindow from "../components/JsApiWindow.vue";
 import JsApiGlobalShortcut from "../components/JsApiGlobalShortcut.vue";
-import Test from "../components/Test/index.vue";
+import Test from "../components/test/index.vue";
 import MyVxeTable from "../components/myVxeTable.vue";
 import MyVueUse from "../components/myVueUse.vue";
 import Demo from "./demo";
