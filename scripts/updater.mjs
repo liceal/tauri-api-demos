@@ -4,11 +4,11 @@ import fs from 'fs';
 
 import updatelog from './updatelog.mjs';
 
-const token = process.env.GITHUBTOKEN;
+const token = process.env.GITHUB_TOKEN;
 
 async function updater() {
   if (!token) {
-    console.log('GITHUBTOKEN is required');
+    console.log('GITHUB_TOKEN is required');
     process.exit(1);
   }
 
