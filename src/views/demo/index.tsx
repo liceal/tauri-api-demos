@@ -3,6 +3,7 @@ import { ElButton, ElMessage } from "element-plus";
 import { WebviewWindow, appWindow, getAll } from "@tauri-apps/api/window";
 import { sendNotification } from "@tauri-apps/api/notification";
 import { message } from "@tauri-apps/api/dialog";
+import UpdateHandler from "./updateHandler";
 
 export default defineComponent({
   setup() {
@@ -103,6 +104,7 @@ export default defineComponent({
       <ElButton onClick={checkWindows}>查看目前所有窗口</ElButton>,
       <ElButton onClick={backLogin}>回到登陆页面</ElButton>,
       <ElButton onClick={openDemo2}>打开Demo2</ElButton>,
+      <UpdateHandler/>
     ];
   },
 });

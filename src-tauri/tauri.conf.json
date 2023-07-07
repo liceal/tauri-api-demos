@@ -21,7 +21,11 @@
         "scope": ["$DOWNLOAD", "$DOWNLOAD/*"]
       },
       "http": {
-        "scope": ["https://tauri.app/*", "https://api.bilibili.com/*"]
+        "scope": [
+          "https://tauri.app/*",
+          "https://api.bilibili.com/*",
+          "https://linxianao.com/*"
+        ]
       }
     },
     "bundle": {
@@ -67,7 +71,13 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": ["https://linxianao.com/tauri-test/test.json"],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDVDQUFGQ0Q1RkZFMUFCM0YKUldRL3ErSC8xZnlxWE9Bc09qOEYydU1qWURsNHpGR3BUL0JxVVF2a2cyVGZGaDd4UytlcmdGdHAK",
+      "windows": {
+        "installMode": "passive"
+      }
     },
     "windows": [
       {
