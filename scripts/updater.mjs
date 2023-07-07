@@ -84,6 +84,9 @@ async function updater() {
 
     // linux
     await setAsset(asset, /.AppImage.tar.gz/, ['linux', 'linux-x86_64']);
+
+    // macos
+    await setAsset(asset, /.dmg/,['macos'])
   });
   await Promise.allSettled(promises);
 
