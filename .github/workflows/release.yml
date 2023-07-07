@@ -14,8 +14,8 @@ jobs:
 
     steps:
       - name: Print all secrets
-        run: echo ${{ secrets.GITHUBTOKEN }}
-        run: echo ${{ secrets.TAURI_PRIVATE_KEY }}
+      - run: echo ${{ secrets.GITHUBTOKEN }}
+      - run: echo ${{ secrets.TAURI_PRIVATE_KEY }}
 
       - uses: actions/checkout@v2
       - name: Query version number
