@@ -1,5 +1,9 @@
 # Updater Log
 
+## v0.0.29
+
+- 默认打开主界面，隐藏登录页
+
 ## v0.0.28
 
 - workflow test
