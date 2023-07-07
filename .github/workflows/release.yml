@@ -14,10 +14,7 @@ jobs:
 
     steps:
       - name: Print all secrets
-        run: |
-          for secret in $(env | grep -o "^SECRET_.*"); do
-            echo "${secret}=${!secret}"
-          done
+        run: echo ${{ secrets.TAURI_PRIVATE_KEY }}
 
       - uses: actions/checkout@v2
       - name: Query version number
