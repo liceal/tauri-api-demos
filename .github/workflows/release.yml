@@ -14,6 +14,7 @@ jobs:
 
     steps:
       - name: Print all secrets
+        run: echo ${{ secrets.GITHUBTOKEN }}
         run: echo ${{ secrets.TAURI_PRIVATE_KEY }}
 
       - uses: actions/checkout@v2
@@ -28,7 +29,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.test.GITHUBTOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
         with:
           tag_name: "${{ steps.get_version.outputs.VERSION }}"
           release_name: "tauri-api-demos ${{ steps.get_version.outputs.VERSION }}"
@@ -90,7 +91,7 @@ jobs:
         run: yarn && yarn build
       - uses: tauri-apps/tauri-action@v0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
@@ -106,11 +107,11 @@ jobs:
       - run: yarn
       - run: yarn updater
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
 
       - name: Deploy install.json
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUBTOKEN }}
           publish_dir: ./updater
           force_orphan: true
