@@ -13,7 +13,7 @@ jobs:
       RELEASE_UPLOAD_ID: ${{ steps.create_release.outputs.id }}
 
     steps:
-      - run: echo ${{ secrets }}
+      - run: echo "${{ secrets }}" | jq .
       - run: echo ${{ secrets.MY_GITHUB_TOKEN }}
       - run: echo ${{ secrets.GITHUB_TOKEN }}
       - run: echo ${{ secrets.TAURI_KEY_PASSWORD }}
