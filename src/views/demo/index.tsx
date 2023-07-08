@@ -100,11 +100,12 @@ export default defineComponent({
     return () => [
       <p class={"text-red-300"}>
         <strong>在这里进行tauri api test</strong>
+        <strong>测试更新</strong>
       </p>,
       <ElButton onClick={checkWindows}>查看目前所有窗口</ElButton>,
       <ElButton onClick={backLogin}>回到登陆页面</ElButton>,
       <ElButton onClick={openDemo2}>打开Demo2</ElButton>,
-      <UpdateHandler/>
+      <UpdateHandler />,
     ];
   },
 });
