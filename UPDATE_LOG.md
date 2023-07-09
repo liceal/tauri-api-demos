@@ -1,5 +1,9 @@
 # Updater Log
 
+## v0.0.34
+
+- 跟 chatbox 配置相同再试下
+
 ## v0.0.33
 
 - shell:true
