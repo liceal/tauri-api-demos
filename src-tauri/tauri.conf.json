@@ -13,11 +13,15 @@
   "tauri": {
     "allowlist": {
       "all": true,
+      "app": {
+        "all": true
+      },
       "shell": {
         "all": true,
         "open": true
       },
       "fs": {
+        "all": true,
         "scope": ["$DOWNLOAD", "$DOWNLOAD/*"]
       },
       "http": {
@@ -26,6 +30,17 @@
           "https://api.bilibili.com/*",
           "https://linxianao.com/*"
         ]
+      },
+      "dialog": {
+        "all": true,
+        "open": true,
+        "save": true
+      },
+      "os": {
+        "all": true
+      },
+      "window": {
+        "all": true
       }
     },
     "bundle": {
