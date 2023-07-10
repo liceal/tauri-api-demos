@@ -25,8 +25,9 @@ jobs:
         id: current_readme
         run: |
           CONTENT=$(cat CURRENT.md)
-          echo "using content ${CONTENT}"
-          echo ::set-output name=content::$CONTENT
+          CONTENT_WITH_NEWLINES=$(echo -e "$CONTENT")
+          echo "using content ${CONTENT_WITH_NEWLINES}"
+          echo ::set-output name=content::$CONTENT_WITH_NEWLINES
 
       - name: Create Release
         id: create_release
