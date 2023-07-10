@@ -23,11 +23,12 @@ jobs:
 
       - name: set current readme
         id: current_readme
+        # run: |
+        #   CONTENT=$(cat CURRENT.md)
+        #   echo ::set-output name=content::$CONTENT
         run: |
           CONTENT=$(cat CURRENT.md)
-          CONTENT_WITH_NEWLINES=$(echo -e "$CONTENT")
-          echo "using content ${CONTENT_WITH_NEWLINES}"
-          echo ::set-output name=content::$CONTENT_WITH_NEWLINES
+          echo "CONTENT = $CONTENT" >> "$GITHUB_ENV"
 
       - name: Create Release
         id: create_release
@@ -39,7 +40,7 @@ jobs:
           release_name: "tauri-api-demos ${{ steps.get_version.outputs.VERSION }}"
           # body: "See the assets to download this version and install."
           body: |
-            $(cat CURRENT.md)
+            ${{ steps.current_readme.outputs.CONTENT }}
 
   build-tauri:
     needs: create-release
