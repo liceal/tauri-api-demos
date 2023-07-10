@@ -26,9 +26,12 @@ jobs:
         # run: |
         #   CONTENT=$(cat CURRENT.md)
         #   echo ::set-output name=content::$CONTENT
-        run: |
-          CONTENT=$(cat CURRENT.md)
-          echo "CONTENT = $CONTENT" >> "$GITHUB_ENV"
+          run: |
+            CONTENT=$(cat CURRENT.md)
+            echo "::set-output name=BODY::$CONTENT"
+
+      - name: Save BODY to file
+        run: echo "${{ steps.read_current.outputs.BODY }}" > body.txt
 
       - name: Create Release
         id: create_release
@@ -39,8 +42,7 @@ jobs:
           tag_name: "${{ steps.get_version.outputs.VERSION }}"
           release_name: "tauri-api-demos ${{ steps.get_version.outputs.VERSION }}"
           # body: "See the assets to download this version and install."
-          body: |
-            ${{ steps.current_readme.outputs.CONTENT }}
+          body_path: body.txt
 
   build-tauri:
     needs: create-release
