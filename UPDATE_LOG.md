@@ -1,9 +1,15 @@
 # Updater Log
 
-## v0.0.49
+## v0.0.50
 
-- 写入当前项目下的 CURRENT.md 作为包内容
-- 多行文本测试
+- 测试写入 body
+- 这里是 CURRENT.md
+
+> 测试
+
+```
+console.log('11')
+```
 
 ## v0.0.35
 
