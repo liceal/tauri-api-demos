@@ -21,6 +21,13 @@ jobs:
           echo "using version tag ${GITHUB_REF:10}"
           echo ::set-output name=version::"${GITHUB_REF:10}"
 
+      - name: set current readme
+        id: current_readme
+        run: |
+          CONTENT=$(cat CURRENT.md)
+          echo "using content ${CONTENT}"
+          echo ::set-output name=content::$CONTENT
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -29,7 +36,8 @@ jobs:
         with:
           tag_name: "${{ steps.get_version.outputs.VERSION }}"
           release_name: "tauri-api-demos ${{ steps.get_version.outputs.VERSION }}"
-          body: "See the assets to download this version and install."
+          # body: "See the assets to download this version and install."
+          body: "${{ steps.current_readme.CONTENT }}"
 
   build-tauri:
     needs: create-release
