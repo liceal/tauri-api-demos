@@ -31,7 +31,7 @@ jobs:
           echo "::set-output name=BODY::$CONTENT"
 
       - name: Save BODY to file
-        run: echo "${{ steps.read_current.outputs.BODY }}" > body.txt
+        run: echo "${{ steps.current_readme.outputs.BODY }}" > body.txt
 
       - name: Create Release
         id: create_release
