@@ -84,18 +84,18 @@ async function updater() {
     // windows
     await setAsset(asset, /.msi.zip/, ['win64', 'windows-x86_64']);
 
-    // // darwin
-    // await setAsset(asset, /.app.tar.gz/, [
-    //   'darwin',
-    //   'darwin-x86_64',
-    //   'darwin-aarch64',
-    // ]);
+    // darwin
+    await setAsset(asset, /.app.tar.gz/, [
+      'darwin',
+      'darwin-x86_64',
+      'darwin-aarch64',
+    ]);
 
-    // // linux
-    // await setAsset(asset, /.AppImage.tar.gz/, ['linux', 'linux-x86_64']);
+    // linux
+    await setAsset(asset, /.AppImage.tar.gz/, ['linux', 'linux-x86_64']);
 
-    // // macos
-    // await setAsset(asset, /.dmg/,['macos'])
+    // macos
+    await setAsset(asset, /.dmg/,['macos'])
   });
   await Promise.allSettled(promises);
 
