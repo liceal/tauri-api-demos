@@ -1,6 +1,6 @@
 # Updater Log
 
-## v0.0.62
+## v0.0.63
 
 - 替换成 chatbox 的规则
 - 自动日志
