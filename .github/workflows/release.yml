@@ -32,7 +32,7 @@ jobs:
 
       - name: Save BODY to file
         run: |
-          node log.js > body.md
+          node scripts/latestbody.js > body.md
 
       - name: Create Release
         id: create_release
