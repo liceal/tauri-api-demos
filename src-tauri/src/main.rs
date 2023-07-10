@@ -16,7 +16,8 @@ fn my_custom_command(window: tauri::Window) {
 }
 
 // 创建菜单
-use tauri::{App, AppHandle, CustomMenuItem, Manager, Menu, MenuItem, Submenu};
+// App, AppHandle,
+use tauri::{CustomMenuItem, Manager, Menu, MenuItem, Submenu};
 fn create_menu() -> Menu {
     let quit = CustomMenuItem::new("quit".to_string(), "Quit");
     let close = CustomMenuItem::new("close".to_string(), "Close");
