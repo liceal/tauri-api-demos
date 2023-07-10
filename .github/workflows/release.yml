@@ -26,9 +26,9 @@ jobs:
         # run: |
         #   CONTENT=$(cat CURRENT.md)
         #   echo ::set-output name=content::$CONTENT
-          run: |
-            CONTENT=$(cat CURRENT.md)
-            echo "::set-output name=BODY::$CONTENT"
+        run: |
+          CONTENT=$(cat CURRENT.md)
+          echo "::set-output name=BODY::$CONTENT"
 
       - name: Save BODY to file
         run: echo "${{ steps.read_current.outputs.BODY }}" > body.txt
