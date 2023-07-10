@@ -37,7 +37,8 @@ jobs:
           tag_name: "${{ steps.get_version.outputs.VERSION }}"
           release_name: "tauri-api-demos ${{ steps.get_version.outputs.VERSION }}"
           # body: "See the assets to download this version and install."
-          body: "${{ steps.current_readme.outputs.CONTENT }}"
+          body: |
+            ${{ steps.current_readme.outputs.CONTENT }}
 
   build-tauri:
     needs: create-release
