@@ -27,6 +27,9 @@ jobs:
       - name: Get version
         id: get_version
         uses: battila7/get-version-action@v2
+        run: |
+          echo "using version tag ${GITHUB_REF:10}"
+          echo ::set-output name=version::"${GITHUB_REF:10}"
 
       - name: setup node
         uses: actions/setup-node@v3
@@ -80,8 +83,8 @@ jobs:
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
-          tagName: Chatbox-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
-          releaseName: "Chatbox v__VERSION__"
+          tagName: tauri-api-demos-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
+          releaseName: "tauri-api-demos v__VERSION__"
           releaseBody: body.md
           releaseDraft: true
           prerelease: false
