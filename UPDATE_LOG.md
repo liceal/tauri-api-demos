@@ -1,15 +1,11 @@
 # Updater Log
 
-## v0.0.57
+## v0.0.58
 
 - 测试写入 body
 - 这里是 CURRENT.md
 
-> 测试
-
-```
-console.log('11')
-```
+> 更改 yml 测试
 
 ## v0.0.35
 
