@@ -1,5 +1,9 @@
 # Updater Log
 
+## v0.0.36
+
+- 写入当前项目下的 CURRENT.md 作为包内容
+
 ## v0.0.35
 
 - try tauri version
