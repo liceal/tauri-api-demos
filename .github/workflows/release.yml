@@ -30,7 +30,7 @@ jobs:
       #     CONTENT=$(cat CURRENT.md)
       #     echo "::set-output name=BODY::$CONTENT"
 
-      - name: Save BODY to file
+      - name: save latest readme to body
         run: |
           node scripts/latestbody.js > body.md
 
