@@ -7,6 +7,16 @@ import updatelog from './updatelog.mjs';
 const require = createRequire(import.meta.url);
 
 async function release() {
+  /*
+  # 发布主版本，v1.x.x -> v2.x.x
+  yarn release major
+  
+  # 发布次版本，v1.0.x -> v1.1.x
+  yarn release minor
+  
+  # 发布补丁版本，patch 参数可省略，v1.0.0 -> v1.0.1
+  yarn release [patch]
+  */
   const flag = process.argv[2] ?? 'patch';
   const packageJson = require('../package.json');
   let [a, b, c] = packageJson.version.split('.').map(Number);

@@ -9,6 +9,7 @@ import { relaunch } from "@tauri-apps/api/process";
 import { http } from "@tauri-apps/api";
 import JSZip from "jszip";
 import { ResponseType } from "@tauri-apps/api/http";
+import { defineComponent } from "vue";
 
 async function update() {
   const unlisten = await onUpdaterEvent(({ error, status }) => {
@@ -72,13 +73,12 @@ async function update2() {
   }
 }
 
-function render() {
-  return [
-    <ElButton onClick={update}>更新</ElButton>,
-    <ElButton onClick={update2}>手动更新</ElButton>,
-  ];
-}
 
-export default {
-  render,
-};
+export default defineComponent({
+  setup(){
+    return ()=>[
+      <ElButton onClick={update}>更新</ElButton>,
+      <ElButton onClick={update2}>手动更新</ElButton>,
+    ];
+  }
+})
