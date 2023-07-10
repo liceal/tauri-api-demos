@@ -1,6 +1,6 @@
 # Updater Log
 
-## v0.0.46
+## v0.0.47
 
 - 写入当前项目下的 CURRENT.md 作为包内容
 - 富文本 body
