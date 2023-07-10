@@ -27,9 +27,6 @@ jobs:
       - name: Get version
         id: get_version
         uses: battila7/get-version-action@v2
-        run: |
-          echo "using version tag ${GITHUB_REF:10}"
-          echo ::set-output name=version::"${GITHUB_REF:10}"
 
       - name: setup node
         uses: actions/setup-node@v3
