@@ -1,6 +1,6 @@
 # Updater Log
 
-## v0.0.51
+## v0.0.52
 
 - 测试写入 body
 - 这里是 CURRENT.md
