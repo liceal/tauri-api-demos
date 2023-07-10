@@ -31,7 +31,9 @@ jobs:
           echo "::set-output name=BODY::$CONTENT"
 
       - name: Save BODY to file
-        run: echo "${{ steps.current_readme.outputs.BODY }}" > body.txt
+        run: |
+          $(cat CURRENT.md) > body.txt
+          echo body.txt
 
       - name: Create Release
         id: create_release
@@ -42,7 +44,7 @@ jobs:
           tag_name: "${{ steps.get_version.outputs.VERSION }}"
           release_name: "tauri-api-demos ${{ steps.get_version.outputs.VERSION }}"
           # body: "See the assets to download this version and install."
-          body_path: body.txt
+          body_path: CURRENT.md
 
   build-tauri:
     needs: create-release
