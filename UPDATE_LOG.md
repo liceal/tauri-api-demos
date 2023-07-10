@@ -1,6 +1,6 @@
 # Updater Log
 
-## v0.0.37
+## v0.0.38
 
 - 写入当前项目下的 CURRENT.md 作为包内容
 
