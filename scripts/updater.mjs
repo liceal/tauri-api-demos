@@ -30,11 +30,6 @@ async function updater() {
 
   if (!tag) return;
 
-  // // 异常处理 tag加v处理
-  // if(tag.name.startsWith('v')){
-
-  // }
-
   // 获取此 tag 的详细信息
   const { data: latestRelease } = await github.rest.repos.getReleaseByTag({
     ...options,
