@@ -63,6 +63,10 @@ jobs:
       #     VERSION: "${{ steps.get_version.outputs.version-without-v }}"
       #   run: make change-version
 
+      - name: save latest readme to body
+        run: |
+          node scripts/latestbody.js > body.md
+
       - name: Build Tauri App
         uses: tauri-apps/tauri-action@dev
         env:
@@ -78,7 +82,7 @@ jobs:
         with:
           tagName: Chatbox-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: "Chatbox v__VERSION__"
-          releaseBody: "See the assets to download this version and install."
+          releaseBody: body.md
           releaseDraft: true
           prerelease: false
           args: --target ${{matrix.target}}
