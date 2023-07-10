@@ -1,5 +1,10 @@
 # Updater Log
 
+## v0.0.61
+
+- 替换成 chatbox 的规则
+- 自动日志
+
 ## v0.0.60
 
 - 测试写入 body
