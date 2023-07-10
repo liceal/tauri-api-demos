@@ -25,15 +25,20 @@ async function updater() {
   });
 
   // 过滤包含 `v` 版本信息的 tag
-  const tag = tags.find((t) => t.name.startsWith('v'));
+  let tag = tags.find((t) => t.name.startsWith('v'));
   // console.log(`${JSON.stringify(tag, null, 2)}`);
 
   if (!tag) return;
 
+  // // 异常处理 tag加v处理
+  // if(tag.name.startsWith('v')){
+
+  // }
+
   // 获取此 tag 的详细信息
   const { data: latestRelease } = await github.rest.repos.getReleaseByTag({
     ...options,
-    tag: tag.name,
+    tag: tag.name
   });
 
   console.log(updatelog(tag.name));
@@ -79,24 +84,26 @@ async function updater() {
     // windows
     await setAsset(asset, /.msi.zip/, ['win64', 'windows-x86_64']);
 
-    // darwin
-    await setAsset(asset, /.app.tar.gz/, [
-      'darwin',
-      'darwin-x86_64',
-      'darwin-aarch64',
-    ]);
+    // // darwin
+    // await setAsset(asset, /.app.tar.gz/, [
+    //   'darwin',
+    //   'darwin-x86_64',
+    //   'darwin-aarch64',
+    // ]);
 
-    // linux
-    await setAsset(asset, /.AppImage.tar.gz/, ['linux', 'linux-x86_64']);
+    // // linux
+    // await setAsset(asset, /.AppImage.tar.gz/, ['linux', 'linux-x86_64']);
 
-    // macos
-    await setAsset(asset, /.dmg/,['macos'])
+    // // macos
+    // await setAsset(asset, /.dmg/,['macos'])
   });
   await Promise.allSettled(promises);
 
   if (!fs.existsSync('updater')) {
     fs.mkdirSync('updater');
   }
+
+  console.log('执行完成',updateData)
 
   // 将数据写入文件
   fs.writeFileSync(
