@@ -1,5 +1,9 @@
 # Updater Log
 
+## v0.0.35
+
+- try tauri version
+
 ## v0.0.34
 
 - 跟 chatbox 配置相同再试下
