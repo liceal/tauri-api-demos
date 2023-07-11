@@ -1,6 +1,6 @@
 # Updater Log
 
-## v0.0.76
+## v0.0.77
 
 > 这里是 note 内容，将放在更新的 notes 里面
 
