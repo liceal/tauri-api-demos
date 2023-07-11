@@ -21,7 +21,8 @@ jobs:
       - name: save latest readme to body
         run: |
           node scripts/latestbody.js > body.md
-          echo "notes=$(cat body.md)" >> $GITHUB_ENV
+          notes=$(sed 's/"/\\"/g' body.md)
+          echo "notes=$notes" >> $GITHUB_ENV
           echo $notes
 
       - name: Create Release
