@@ -58,9 +58,10 @@ jobs:
       - name: save latest readme to body
         run: |
           node scripts/latestbody.js > body.md
-          notes=$(node scripts/latestbody.js notes)
+          node scripts/latestbody.js notes > notes.txt
           echo "notes=$notes" >> $GITHUB_ENV
-          echo $notes
+          echo $notes.txt
+          echo $body.md
 
       - uses: actions/checkout@v3
 
