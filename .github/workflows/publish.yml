@@ -82,8 +82,8 @@ jobs:
         with:
           tagName: tauri-api-demos-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: "tauri-api-demos v__VERSION__"
-          releaseBody: body.md
-          releaseDraft: true
+          releaseBody: ${{ github.workspace }}/body.md
+          releaseDraft: false
           prerelease: false
           args: --target ${{matrix.target}}
 
