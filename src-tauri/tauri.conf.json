@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "tauri-api-demos",
-    "version": "0.0.78"
+    "version": "0.0.79"
   },
   "tauri": {
     "allowlist": {
