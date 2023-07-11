@@ -1,8 +1,8 @@
 # Updater Log
 
-## v0.0.69
+## v0.0.70
 
-> 这里是 note 内容
+> 这里是 note 内容，将放在更新的 notes 里面
 
 - 替换成 chatbox 的规则
 - 自动日志
