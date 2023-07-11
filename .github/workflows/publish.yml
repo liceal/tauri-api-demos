@@ -109,6 +109,7 @@ jobs:
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
           releaseId: ${{ needs.create-release.outputs.RELEASE_UPLOAD_ID }}
+          tagName: ${{ needs.create-release.outputs.RELEASE_UPLOAD_ID }}
           # tagName: tauri-api-demos-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: "tauri-api-demos v__VERSION__"
           releaseBody: ${{ env.notes }}
