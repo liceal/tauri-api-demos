@@ -21,6 +21,8 @@ jobs:
       - name: save latest readme to body
         run: |
           node scripts/latestbody.js > body.md
+          echo "notes=$(cat body.md)" >> $GITHUB_ENV
+          echo $notes
 
       - name: Create Release
         id: create_release
@@ -108,7 +110,7 @@ jobs:
           releaseId: ${{ needs.create-release.outputs.RELEASE_UPLOAD_ID }}
           # tagName: tauri-api-demos-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: "tauri-api-demos v__VERSION__"
-          # releaseBody: ${{ github.workspace }}/body.md
+          releaseBody: ${{ env.notes }}
           releaseDraft: false
           prerelease: false
           args: --target ${{matrix.target}}
