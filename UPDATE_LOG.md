@@ -1,9 +1,10 @@
 # Updater Log
 
-## v0.0.66
+## v0.0.67
 
 - 替换成 chatbox 的规则
 - 自动日志
+- 替换成 publish.yml 简要版
 
 ## v0.0.60
 
