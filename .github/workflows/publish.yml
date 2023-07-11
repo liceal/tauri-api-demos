@@ -21,7 +21,7 @@ jobs:
       - name: save latest readme to body
         run: |
           node scripts/latestbody.js > body.md
-          notes=$(sed 's/"/\\"/g' body.md)
+          notes=${node scripts/latestbody.js notes}
           echo "notes=$notes" >> $GITHUB_ENV
           echo $notes
 

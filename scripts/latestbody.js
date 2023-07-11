@@ -20,6 +20,21 @@ if (match) {
   // console.log(`Version: ${version}`);
   // console.log(`Content: ${content}`);
   console.log(content);
+
+  // 获取第一个>里面的内容用于notes
+  if(process.argv[2] === 'notes') {
+    // node .\scripts\latestbody.js notes
+    // console.log(process.argv[2]);
+    let notesReg = /> (.*)/
+    let noteRes = notesReg.exec(content)
+    if(noteRes){
+      console.log(noteRes[1]);
+      return noteRes[1]
+    }else{
+      return '软件更新'
+    }
+  }
+
   return content
 
 } else {
