@@ -1,12 +1,18 @@
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import { ElButton, ElMessage } from "element-plus";
 import { WebviewWindow, appWindow, getAll } from "@tauri-apps/api/window";
 import { sendNotification } from "@tauri-apps/api/notification";
 import { message } from "@tauri-apps/api/dialog";
 import UpdateHandler from "./updateHandler";
+import { getVersion } from "@tauri-apps/api/app";
 
 export default defineComponent({
   setup() {
+    let appVersion = ref()
+    onMounted(async ()=>{
+      appVersion.value = await getVersion()
+    })
+
     function checkWindows() {
       const wins = getAll();
       console.log(wins);
@@ -93,14 +99,16 @@ export default defineComponent({
     appWindow
       .listen("msg", (e) => {
         console.log(12123);
+        message(`app msg listen ${JSON.stringify(e)}`)
       })
       .then((unlisten) => {
         unlisten();
       });
+
     return () => [
       <p class={"text-red-300"}>
         <strong>在这里进行tauri api test</strong>
-        <strong>测试更新</strong>
+        <p>当前版本：{appVersion.value}</p>
       </p>,
       <ElButton onClick={checkWindows}>查看目前所有窗口</ElButton>,
       <ElButton onClick={backLogin}>回到登陆页面</ElButton>,
