@@ -4,17 +4,6 @@ on:
     tags: [v\d+\.\d+\.\d+]
 
 jobs:
-  create-readme:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: save latest readme to body
-        run: |
-          node scripts/latestbody.js > body.md
-          notes=$(node scripts/latestbody.js notes)
-          echo "notes=$notes" >> $GITHUB_ENV
-          echo $notes
-
   publish-tauri:
     permissions:
       contents: write
