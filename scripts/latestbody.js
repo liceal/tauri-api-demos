@@ -19,20 +19,26 @@ if (match) {
   const content = match[2].trim();
   // console.log(`Version: ${version}`);
   // console.log(`Content: ${content}`);
-  console.log(content);
+  // console.log(content);
 
-  // 获取第一个>里面的内容用于notes
+  // 获取第一个>里面的内容用于notes 命令：node .\scripts\latestbody.js notes
   if(process.argv[2] === 'notes') {
-    // node .\scripts\latestbody.js notes
     // console.log(process.argv[2]);
-    let notesReg = /> (.*)/
-    let noteRes = notesReg.exec(content)
-    if(noteRes){
-      console.log(noteRes[1]);
-      return noteRes[1]
-    }else{
-      return '软件更新'
-    }
+    // let notesReg = /> (.*)/
+    // let noteRes = notesReg.exec(content)
+    // if(noteRes){
+    //   // console.log(noteRes[1]);
+    //   console.log(noteRes[1]);
+    //   return noteRes[1]
+    // }else{
+    //   console.log('软件更新');
+    //   return '软件更新'
+    // }
+    let notes = content.replace(/\n/g, '\\n');
+    console.log(notes)
+    // console.log('aaa\\nbbb\\nsss');
+  }else{
+    console.log(content);
   }
 
   return content
