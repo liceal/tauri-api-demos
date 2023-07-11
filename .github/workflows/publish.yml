@@ -84,9 +84,7 @@ jobs:
         with:
           tagName: tauri-api-demos-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: "tauri-api-demos v__VERSION__"
-          releaseBody: ${{ env.notes }}
+          releaseBody: "See the assets to download this version and install."
           releaseDraft: false
           prerelease: false
           args: --target ${{matrix.target}}
-          # releaseId: ${{ needs.create-release.outputs.RELEASE_UPLOAD_ID }}
-          # releaseBody: ${{ env.notes }}
